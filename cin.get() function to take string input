@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Initializing variables.
+    char str[100];
+    int i = 0;
+    char ch;
+
+    // Accepting input character by character until newline.
+    cout << "Enter the String: ";
+    while (true)
+    {
+        ch = cin.get();
+
+        // Break the loop if newline is encountered.
+        if (ch == '\n')
+            break;
+
+        // Store the character in the array.
+        str[i++] = ch;
+    }
+
+    // Null-terminate the string.
+    str[i] = '\0';
+
+    // Initializing for loop.
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        // Toggling characters.
+        if (str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] = str[i] + 32;
+        }
+        else if (str[i] >= 'a' && str[i] <= 'z')
+        {
+            str[i] = str[i] - 32;
+        }
+    }
+
+    cout << "\nToggled string: " << str << endl; // Printing toggled string.
+
+    return 0;
+}
