@@ -12,7 +12,7 @@ int main()
     cout << "Enter the String: ";
     while (true)
     {
-        ch = cin.get();
+        ch = cin.get(); //or  cin.getline(str, 100); with #include <cstring>
 
         // Break the loop if newline is encountered.
         if (ch == '\n')
