@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+// function to remove characters and
+// print new string
+void removeSpecialCharacter(string s) {
+    int siz=s.size();
+    for (int i = 0; i < siz; i++) {
+        // Finding the character whose
+        // ASCII value fall under this
+        // range
+        if (s[i] < 'A' || s[i] > 'Z' && s[i] < 'a' || s[i] > 'z') {
+          for(int j = i; s[j] != '\0'; ++j)
+            {
+                s[j] = s[j+1];
+                
+            }
+            siz--;
+            i--;
+           
+        }
+    }
+    cout << s;
+}
+// driver code
+int main() {
+    string s = "P*re;p...&14267839()@*^@%#$!(ins't^a?";
+    removeSpecialCharacter(s);
+    return 0;
+}
