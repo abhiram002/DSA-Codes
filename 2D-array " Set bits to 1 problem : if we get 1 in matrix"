@@ -1,0 +1,41 @@
+
+#include <iostream>
+
+using namespace std;
+void setmatrix(int arr[][4],int n){
+    int arr1[n][n];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            arr1[i][j]=arr[i][j];
+        }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+           if(arr1[i][j]==1){
+               for(int k=0;k<n;k++){
+                   arr[i][k]=1;
+               }
+               for(int k=0;k<n;k++){
+                   arr[k][j]=1;
+               }
+           }
+        }
+    }
+     for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+}
+
+int main()
+{
+    int n=4;
+   int arr[4][4]={{1, 2, 3, 4},
+                  {5, 6, 7, 8},
+                  {9, 10,11,12},
+                  {13,14,15,1}};
+   setmatrix(arr,n);
+    return 0;
+}
