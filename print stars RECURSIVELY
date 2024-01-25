@@ -1,0 +1,24 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void func(int n, int row = 1) {
+    if (row > n) {
+        return;
+    }
+    for (int i = 0; i < row; i++) {
+        cout << "*";
+    }
+    cout << endl;
+    func(n, row + 1);
+}
+
+int main() {
+     int n;
+    cin>>n;
+    func(n);
+    return 0;
+}
